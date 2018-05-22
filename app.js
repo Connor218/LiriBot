@@ -36,13 +36,16 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 //Spotify API 
 var Spotify = require('node-spotify-api');
+
+var search = function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
+
  
 var spotify = new Spotify({
-  id: <your spotify client id>,
-  secret: <your spotify client secret>
-});
+  id: e22512ca96c84af0be17aafb3572cbf0,
+  secret: fe997f4d1cce4e2dbbea26e53010d9a7,
+  });
  
-spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+spotify.search(type='track', query='All the Small Things', function(err, data) {
   if (err) {
     return console.log('Error occurred: ' + err);
   }
